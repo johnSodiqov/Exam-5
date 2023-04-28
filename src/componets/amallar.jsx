@@ -5,22 +5,22 @@ import "./style/amallar.css"
 import axios from 'axios';
 
 class Amallar extends Component {
-    constructor(){
+    constructor() {
         super();
-        this.state= {
+        this.state = {
             userData: []
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         axios.get("https://api.npoint.io/45e6264d5b437ebadbd1")
-        .then((mas)=>{
-            this.setState(({
-                userData: mas.data
-            }))
-        })
-        .catch((err)=>{
-            console.log("Something is wrong");
-        })
+            .then((mas) => {
+                this.setState(({
+                    userData: mas.data
+                }))
+            })
+            .catch((err) => {
+                console.log("Something is wrong");
+            })
     }
     render() {
         return (
@@ -43,29 +43,29 @@ class Amallar extends Component {
                     </div>
                 </div>
 
-                <div className="table">
-                    <table class="table table-light table-striped">
-                        <tr>
-                            <th>ID</th>
-                            <th>User</th>
-                            <th>Telefon</th>
-                            <th>JshIr</th>
-                            <th>Qurilma</th>
-                        </tr>
-                        {
-                            this.state.userData.map(item=>{
-                                return(
-                                    <tr>
-                                        <td>{item.id}</td>
-                                        <td>{item.name}</td>
-                                        <td>{item.number}</td>
-                                        <td>{item.stir}</td>
-                                        <td>{item.device}</td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </table>
+                <div className="table row">
+                    <div className="col-1"><h4>ID</h4></div>
+                    <div className="col-2"><h4>User</h4></div>
+                    <div className="col-2"><h4>Phone Number</h4></div>
+                    <div className="col-3"><h4>STIR</h4></div>
+                    <div className="col-2"><h4>Device</h4></div>
+
+                    {
+                        this.state.userData.map(item => {
+                            return (
+
+                                <div className='table-content row my-1'>
+                                    <div className="col-1"><h3>{item.id}</h3></div>
+                                    <div className="col-2"><h3>{item.name}</h3></div>
+                                    <div className="col-2"><h3>{item.number}</h3></div>
+                                    <div className="col-3"><h3>{item.stir}</h3></div>
+                                    <div className="col-2"><h3>{item.device}</h3></div>
+                                </div>
+
+                            )
+                        })
+                    }
+
                 </div>
             </div>
         );

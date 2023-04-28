@@ -54,18 +54,34 @@ input::placeholder {
 }
 
 .table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 98%;
     margin: 0 auto;
     background-color: #fff;
 }
 
-tr:nth-child(-n + 20) {
-    background-color: #EAF0FF;
-    border: 2px solid #4878d1;
-    border-radius: 10px;
+.table h4 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    margin: 10px 0;
 }
 
-td:nth-child(-n + 20){
-    background-color: #EAF0FF;
-    border: 1px solid #4878d1;
+.table-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #D3E0FF;
+
+}
+
+.table-content h3 {
+    text-align: center;
+    font-size: 16px;
 }
